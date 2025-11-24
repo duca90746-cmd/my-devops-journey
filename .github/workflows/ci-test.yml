@@ -1,0 +1,26 @@
+name: Kiem thu Robot # Tên của quy trình
+
+# 1. KHI NÀO CHẠY? (Trigger)
+on:
+  push:
+    branches: [ "main" ] # Chạy khi có code đẩy vào nhánh main
+
+# 2. CHẠY CÁI GÌ? (Jobs)
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest # Thuê một máy ảo Ubuntu của GitHub (Miễn phí)
+    
+    steps:
+    # Bước 1: Kéo code của bạn về máy ảo
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    # Bước 2: Chạy thử một lệnh Linux cơ bản
+    - name: Chay lenh chao mung
+      run: echo "Xin chao Sep Duc Anh! Robot da nhan duoc lenh."
+
+    # Bước 3: Kiểm tra xem có file index.html không
+    - name: Kiem tra file
+      run: |
+        ls -la
+        cat index.html

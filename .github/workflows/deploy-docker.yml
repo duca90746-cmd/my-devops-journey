@@ -24,7 +24,7 @@ jobs:
     - name: Build and Push
       uses: docker/build-push-action@v4
       with:
-        context: /home/ducanh/devops/project_cupid  # Chỉ định thư mục chứa file code (quan trọng!)
+        context: .  # Chỉ định thư mục chứa file code (quan trọng!)
         push: true
         # Đặt tên cho Image (Thay duca90746 bằng user của bạn nếu cần)
         tags: ${{ secrets.DOCKER_USERNAME }}/cupid-web:latest

@@ -1,0 +1,7 @@
+services:
+  my-super-web:            # Tên đặt cho vui (Service Name)
+    image: nginx           # Tên Image gốc
+    ports:
+      - "9090:80"          # Mapping Port (Ngoài:Trong)
+    volumes:
+      - ./:/usr/share/nginx/html  # Mapping Volume (Tại đây : Trong kia)
